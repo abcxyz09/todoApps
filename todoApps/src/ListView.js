@@ -5,16 +5,8 @@ import TodoModel from './TodoModel';
 import OmniBox from './OmniBox';
 import SortableListView from 'react-native-sortable-listview';
 import ListViewItem from './ListViewItem';
-import {moveTodoList,findTodo} from './Utils';
+import {moveTodoList} from './moveTodoList';
 let dataList = [];
-/*dataList.sort(
-  function(a,b) {
-    if(a.priority<b.priority)
-    return 1;
-    else
-    return -1;
-  }
-);*/
 let dataListOrder = getOrder(dataList);
 
 function getOrder(list) {
@@ -31,7 +23,7 @@ class ListView extends Component {
   constructor(props) {
     super(props);
     this.updateDataList = this.updateDataList.bind(this);
-    this._onCompletedChange = this._onCompletedChange.bind(this);
+    this.onCompletedChange = this.onCompletedChange.bind(this);
     this.state = {
       dataList: dataList
     }
@@ -44,7 +36,7 @@ class ListView extends Component {
     });
   }
 
-  _onCompletedChange(dataItem, index) {
+  onCompletedChange(dataItem, index) {
     let fromIndex = dataListOrder.indexOf(index);
     let toIndex = dataItem.completed ? dataListOrder.length - 1 : 0;
     moveOrderItem(this, fromIndex, toIndex);
@@ -60,7 +52,7 @@ class ListView extends Component {
           data={this.state.dataList}
           order={dataListOrder}
           onRowMoved={e => moveOrderItem(this, e.from, e.to)}
-          renderRow={(dataItem,section, index) => <ListViewItem data={dataItem} dataIndex={index} onCompletedChange={this._onCompletedChange}/>}
+          renderRow={(dataItem,section, index) => <ListViewItem data={dataItem} dataIndex={index} onCompletedChange={this.onCompletedChange}/>}
         />
       );
     }

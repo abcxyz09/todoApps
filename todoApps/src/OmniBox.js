@@ -1,9 +1,8 @@
 
-
 import React, { Component } from 'react';
 import { TextInput } from 'react-native';
 import TodoModel from './TodoModel';
-import {moveTodoList,findTodo} from './Utils';
+import {moveTodoList} from './moveTodoList';
 
 
 class OmniBox extends Component {
@@ -31,7 +30,6 @@ class OmniBox extends Component {
          if(n.length){
             let nn = new TodoModel(n);
             let dataList = this.props.data;
-            //dataList.push(nn);
             dataList.unshift(nn); //Insert new Item begining at the dataList
             this.props.updateDataList(dataList);
             this.setState({newValue:''});

@@ -15,6 +15,3 @@ export function moveTodoList(array,fromIndex,toIndex){
   }
   return array;
 }
-export function findTodo(todo,todoList){
-   return todoList.find((item) => item.title.toLowerCase()===todo.title.toLowerCase());
-}

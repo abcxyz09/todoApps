@@ -7,7 +7,7 @@ import CheckBox from './CheckBox';
 class ListViewItem extends Component {
   constructor(props) {
     super(props);
-    this._onCheckBoxPressed = this._onCheckBoxPressed.bind(this);
+    this.onCheckBoxPressed = this.onCheckBoxPressed.bind(this);
     this.state = {
       data: this.props.data
     }
@@ -19,7 +19,7 @@ class ListViewItem extends Component {
     })
   }
 
-  _onCheckBoxPressed() {
+  onCheckBoxPressed() {
     let data = this.state.data;
     data.completed = !data.completed;
     this.setState({
@@ -35,7 +35,7 @@ class ListViewItem extends Component {
     return (
       <TouchableHighlight underlayColor={'#eee'} style={{paddingTop: 6, paddingBottom: 6, backgroundColor: "#F8F8F8", borderBottomWidth:1, borderColor: '#eee'}} {...this.props.sortHandlers}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <CheckBox data={data} color={color} onCheckBoxPressed={this._onCheckBoxPressed}></CheckBox>
+          <CheckBox data={data} color={color} onCheckBoxPressed={this.onCheckBoxPressed}></CheckBox>
           <Text style={{fontSize:18, color: color, textDecorationLine: textDecorationLine}}>{data.title}</Text>
         </View>
       </TouchableHighlight>
