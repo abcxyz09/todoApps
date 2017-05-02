@@ -15,7 +15,7 @@ let dataList = [];
     return -1;
   }
 );*/
-var dataListOrder = getOrder(dataList);
+let dataListOrder = getOrder(dataList);
 
 function getOrder(list) {
   return Object.keys(list);

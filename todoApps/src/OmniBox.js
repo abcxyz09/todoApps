@@ -10,7 +10,6 @@ class OmniBox extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
-    //this.onKeyPress = this.onKeyPress.bind(this);
     this.addTodoList = this.addTodoList.bind(this);
   }
 
@@ -21,8 +20,8 @@ class OmniBox extends Component {
   }
 
   onChange(event){
-    var title = event.nativeEvent.text;
-    var dataList = this.props.data.filter((item) => item.title.match(new RegExp('.*' + title +'.*', 'gi')));
+    let title = event.nativeEvent.text;
+    let dataList = this.props.data.filter((item) => item.title.match(new RegExp('.*' + title +'.*', 'gi')));
     this.setState({newValue: title});
     this.props.updateDataList(dataList);
   }
@@ -38,29 +37,8 @@ class OmniBox extends Component {
             this.setState({newValue:''});
         }
   }
-/*
-  onKeyPress(event){
-    if (event.nativeEvent.key == 'Enter' && this.state.newValue) {
-      var newDataItem = new TodoModel(this.state.newValue);
 
-      var dataList = this.props.data;
-      var dataItem = findTodo(newDataItem, dataList);
-      if(dataItem) {
-        moveTodoList(dataList, (dataList.indexOf(dataItem)), 0);
-        this.setState({newValue: ''});
-        this.props.updateDataList(dataList);
-        return;
-      }
-      dataList.unshift(newDataItem);
-      this.setState({newValue: ''});
-      this.props.updateDataList(dataList);
-    }
-  }
-*/
   render() {
-      //onKeyPress={this.onKeyPress}
-      //onSubmitEditing={this.addTodoList}
-      //onChange={this.onChange}
     return (
       <TextInput style={{height: 50, padding: 4, marginBottom: 0, fontSize: 20, borderWidth: 3, borderColor: '#eee', borderRadius: 8, backgroundColor: '#fff'}}
         placeholder='Add TodoList or Search'

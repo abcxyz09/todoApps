@@ -20,12 +20,11 @@ class ListViewItem extends Component {
   }
 
   _onCheckBoxPressed() {
-    var data = this.state.data;
+    let data = this.state.data;
     data.completed = !data.completed;
     this.setState({
       data: data
     });
-
     this.props.onCompletedChange(data, this.props.dataIndex);
   }
 
