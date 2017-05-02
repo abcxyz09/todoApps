@@ -1,0 +1,6 @@
+react-native-vector-icons
+     npm install react-native-vector-icons --save
+     react-native link
+
+react-native-sortable-listview
+     npm install react-native-sortable-listview --save
