@@ -1,7 +1,7 @@
 /*
   Apps Name: Todo List
   Author: Jony Roy
-  Email: jonyroyice@gamil.com
+  Email: jonyroyice@gmail.com
   Github: www.github.com/abcxyz09
 */
 import React, { Component } from 'react';

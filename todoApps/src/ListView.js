@@ -15,7 +15,7 @@ function getOrder(list) {
 
 function moveOrderItem(listView, fromIndex, toIndex) {
   moveTodoList(dataListOrder, parseInt(fromIndex,10), parseInt(toIndex,10));
-  if (listView.forceUpdate)
+  //if (listView.forceUpdate)
      listView.forceUpdate();
 }
 
@@ -41,18 +41,17 @@ class ListView extends Component {
     let toIndex = dataItem.completed ? dataListOrder.length - 1 : 0;
     moveOrderItem(this, fromIndex, toIndex);
   }
-
+//ref='listView'
   render() {
     let listView = (<View></View>);
     if (this.state.dataList.length) {
       listView = (
         <SortableListView
-          ref='listView'
           style={{flex: 1}}
           data={this.state.dataList}
           order={dataListOrder}
           onRowMoved={e => moveOrderItem(this, e.from, e.to)}
-          renderRow={(dataItem,section, index) => <ListViewItem data={dataItem} dataIndex={index} onCompletedChange={this.onCompletedChange}/>}
+          renderRow={(dataItem,sec, index) => <ListViewItem data={dataItem} dataIndex={index} onCompletedChange={this.onCompletedChange}/>}
         />
       );
     }

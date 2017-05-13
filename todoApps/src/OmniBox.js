@@ -21,6 +21,10 @@ class OmniBox extends Component {
   onChange(event){
     let title = event.nativeEvent.text;
     let dataList = this.props.data.filter((item) => item.title.match(new RegExp('.*' + title +'.*', 'gi')));
+    /*
+       g means global match. Find all matches rather than stopping after the first match.
+       i means ignore the case.
+    */
     this.setState({newValue: title});
     this.props.updateDataList(dataList);
   }

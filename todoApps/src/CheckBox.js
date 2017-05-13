@@ -22,7 +22,7 @@ class CheckBox extends Component {
         backgroundColor='rgba(0,0,0,0)'
         color={color}
         underlayColor='rgba(0,0,0,0)'
-        size={20}
+        size={25}
         iconStyle={{marginLeft: -10, marginRight: 0}}
         activeOpacity={1}
         borderRadius={50}
