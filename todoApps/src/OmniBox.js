@@ -8,9 +8,12 @@ import {moveTodoList} from './moveTodoList';
 class OmniBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {newValue: ''};
     this.onChange = this.onChange.bind(this);
     this.addTodoList = this.addTodoList.bind(this);
+  }
+
+  componentWillMount() {
+    this.setState({ newValue: '' });
   }
 
   onChange(event){
