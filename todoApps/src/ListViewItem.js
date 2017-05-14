@@ -8,23 +8,17 @@ class ListViewItem extends Component {
   constructor(props) {
     super(props);
     this.onCheckBoxPressed = this.onCheckBoxPressed.bind(this);
-    this.state = {
-      data: this.props.data
-    }
+    this.state = { data: this.props.data }
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      data: this.props.data
-    })
+  componentWillReceiveProps(props) { //called when props are passed to the Component
+    this.setState({ data: this.props.data });
   }
 
   onCheckBoxPressed() {
     let data = this.state.data;
     data.completed = !data.completed;
-    this.setState({
-      data: data
-    });
+    this.setState({ data: data });
     this.props.onCompletedChange(data, this.props.dataIndex);
   }
 

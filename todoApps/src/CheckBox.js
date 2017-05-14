@@ -6,9 +6,7 @@ import Icon from  'react-native-vector-icons/MaterialIcons';
 class CheckBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: this.props.data
-    };
+    this.state = { data: this.props.data };
   }
 
   render() {

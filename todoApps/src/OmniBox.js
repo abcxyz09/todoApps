@@ -13,9 +13,7 @@ class OmniBox extends Component {
   }
 
   componentWillMount() {
-    this.setState({
-      newValue: '',
-    });
+    this.setState({ newValue: '' });
   }
 
   onChange(event){

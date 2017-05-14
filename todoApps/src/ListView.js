@@ -23,16 +23,12 @@ class ListView extends Component {
     super(props);
     this.updateDataList = this.updateDataList.bind(this);
     this.onCompletedChange = this.onCompletedChange.bind(this);
-    this.state = {
-      dataList: dataList
-    }
+    this.state = { dataList: dataList }
   }
 
   updateDataList(dataList) {
     dataListOrder = getOrder(dataList);
-    this.setState({
-      dataList: dataList
-    });
+    this.setState({ dataList: dataList });
   }
 
   onCompletedChange(dataItem, index) {
