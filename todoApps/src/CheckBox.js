@@ -14,18 +14,14 @@ class CheckBox extends Component {
   render() {
     let iconName = this.state.data.completed ? 'check-box' : 'check-box-outline-blank';
     let color = this.props.color || '#000';
-
     return (
       <Icon.Button
         data={this.state.data}
         name={iconName}
         backgroundColor='rgba(0,0,0,0)'
-        color={color}
         underlayColor='rgba(0,0,0,0)'
-        size={25}
-        iconStyle={{marginLeft: -10, marginRight: 0}}
-        activeOpacity={1}
-        borderRadius={50}
+        color={color}
+        size={30}
         onPress={this.props.onCheckBoxPressed}
       >
       </Icon.Button>

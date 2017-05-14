@@ -30,11 +30,11 @@ class OmniBox extends Component {
   }
 
   addTodoList(event){
-         let n = event.nativeEvent.text.trim();
-         if(n.length){
-            let nn = new TodoModel(n);
+         let inputText = event.nativeEvent.text.trim();
+         if(inputText.length){
+            let newList = new TodoModel(inputText);
             let dataList = this.props.data;
-            dataList.unshift(nn); //Insert new Item begining at the dataList
+            dataList.unshift(newList); //Insert new Item begining at the dataList
             this.props.updateDataList(dataList);
             this.setState({newValue:''});
         }

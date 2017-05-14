@@ -1,5 +1,3 @@
-
-
 class TodoModel {
   constructor(title) {
     this.title = title;
